@@ -12,3 +12,5 @@ class AuthorDetail extends Model
   }
   //In altri termini, ogni qualvolta dovremo mappare una relazione tra due o più tabelle dovremo creare una MAPPING tra la tabella primaria (qui chiamata, 'author_details') e la secondaria (qui, 'authors'). Procederemo all'inverso nell'altro Model.
 }
+
+//COME POSSO LEGGERLA: Un profilo può avere un solo autore.
