@@ -30,7 +30,7 @@ class PostSeeder extends Seeder
 
         $author->detail()->save($authorDetail);
 
-        for ($j = 0; $j < rand (1, 4); $j++) {
+        for ($j = 0; $j < rand(1, 4); $j++) {
           $post = new Post();
           $post->title = $faker->text(30);
           $post->body = $faker->text(1200);
