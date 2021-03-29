@@ -9,6 +9,8 @@ class AuthorController extends Controller
 {
   //Creiamo una function index:
   public function index() {
-    dump('Prova');//Test di Collegamento Rotta
+    // dump('Prova');//Test di Collegamento Rotta.
+    //Creo una variabile in cui salvare tutte le righe della tabella 'authors' del mio Database 'boolpress':
+    $authors = Author::all();
   }
 }
