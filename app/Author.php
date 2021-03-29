@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
-    // Qui vado ad inserire il TIPO di  relazione esistente tra la tab 'authors', relativa a questo Model, e la tab 'author_details'(contenete, la FK collegata all'id di 'authors'). Partendo dal Model 'Author' dobbiamo arrivare al Model 'AuthorDetail'. Definisco, dunque, una FX con un nome che identifichi la tab ('author_details') relativa all'altro Model (l'AuthorDetail).
+    // Qui vado ad inserire il TIPO di  relazione esistente tra la tab 'authors', relativa a questo Model, e la tab 'author_details'(contenete, la FK collegata all'id di 'authors'). Partendo dal presente Model 'Author' dobbiamo arrivare al Model 'AuthorDetail'. Definisco, dunque, una FX con un nome che identifichi la tab ('author_details') relativa all'altro Model (l'AuthorDetail).
     public function detail() {
       return $this->hasOne('App\AuthorDetail');//'hasOne' indica il tipo di relazione 1 ad 1
     }
