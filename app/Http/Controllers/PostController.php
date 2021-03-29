@@ -13,12 +13,16 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexPost()
     {
-      // $authors = Author::all();
-      // return view('author.index', compact('authors'));
       $posts = Post::all();
       return view('post.index', compact('posts'));
+    }
+
+    public function indexAuthor()
+    {
+      $authors = Author::all();
+      return view('author.index', compact('authors'));
     }
 
     /**
