@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             // Creiamo una colonna BigInteger che riporti quella che sarà la ForeignKey(FK), 'author_id', nella tabella 'posts'. Essa richiamerà l'id (PK) dell'autore (vedi più in basso(*)):
             $table->unsignedBigInteger('author_id');
             //Creiamo, qui sotto, tutte le altre colonne della tabella:
-            $table->string('title', 20);
+            $table->string('title', 255);
             $table->text('body');
 
             $table->timestamps();
