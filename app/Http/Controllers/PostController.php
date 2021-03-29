@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Author;//Inserito per consentire al presente Controller di comunicare col Database a mezzo Model 'Author'.
 
 class PostController extends Controller
 {
