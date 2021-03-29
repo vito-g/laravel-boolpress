@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//Creao la rotta relativa al metodo Index del Controller 'AuthorController':
+Route::get('/author', 'AuthorController@index');
