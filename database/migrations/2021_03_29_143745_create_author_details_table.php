@@ -23,7 +23,7 @@ class CreateAuthorDetailsTable extends Migration
             $table->string('picture', 2048);
 
             $table->timestamps();
-            //(*)Creiamo la relazione, di cui sopra:
+            //(*)Creiamo la Relazione di cui sopra (visibile, poi, nel 'Designer' del Database):
             $table->foreign('author_id')//Qui la FK presente in 'author_details'.
             ->references('id')//Qui l'id (PK) nella tabella 'authors' cui la FK fa riferimento
             ->on('authors');//Qui il nome della tabella contenente quella PK
