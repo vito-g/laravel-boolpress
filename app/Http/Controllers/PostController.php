@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Author;//Inserito per consentire al presente Controller di comunicare col Database a mezzo Model 'Author'.
+use App\Post;
 
 class PostController extends Controller
 {
@@ -14,8 +15,10 @@ class PostController extends Controller
      */
     public function index()
     {
-      $authors = Author::all();
-      return view('author.index', compact('authors'));
+      // $authors = Author::all();
+      // return view('author.index', compact('authors'));
+      $posts = Post::all();
+      return view('post.index', compact('posts'));
     }
 
     /**
