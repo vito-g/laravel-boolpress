@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use App\Author;
+use App\AuthorDetail;
 
 class PostSeeder extends Seeder
 {
