@@ -26,8 +26,9 @@ class PostController extends Controller
      */
     public function create()
     {
+
       $authors = Author::all();
-      return view('post.create', compact($authors));
+      return view('post.create', compact('authors'));
     }
 
     /**
@@ -52,6 +53,8 @@ class PostController extends Controller
 
         //Vado a salvarli:
         $post->save();
+
+        return redirect()->route('post.index');
 
     }
 

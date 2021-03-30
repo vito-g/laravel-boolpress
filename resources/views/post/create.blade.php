@@ -5,7 +5,7 @@
 @section('content')
 
 
-
+  {{-- {{dd($authors)}} --}}
   <form action="{{route('post.store')}}" method="post">
   @csrf
 
@@ -15,8 +15,8 @@
   {{-- oppure usiamo blade --}}
   {{-- @method('POST') --}}
     <div class="form-group">
-      <label for="authors">Authors</label>
-      <select multiple class="form-control" id="authors" name="authors">
+      <label for="author_id">Authors</label>
+      <select class="form-control" id="author_id" name="author_id">
         @foreach ($authors as $key => $author)
           <option value="{{$author->id}}">{{$author->name}}{{$author->lastname}}</option>
         @endforeach
@@ -30,12 +30,6 @@
       <label for="body">Body-Post</label>
       <textarea class="form-control" id="body" name="body" rows="24"></textarea>
     </div>
-    {{-- <div class="form-group">
-      <label for="exampleFormControlSelect2">Example multiple select</label>
-      <select multiple class="form-control" id="exampleFormControlSelect2">
-        <option>1</option>
-      </select>
-    </div> --}}
     <input type="submit" value="Save Post">
   </form>
 
