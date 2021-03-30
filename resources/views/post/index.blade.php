@@ -11,6 +11,7 @@
         <th scope="col">Title</th>
         <th scope="col">Body</th>
         <th scope="col">Author</th>
+        <th scope="col">Tags</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,11 @@
           <td>{{$post->body}}</td>
           {{-- Per Scendere nella Tab Secondaria: --}}
           <td>{{$post->author->lastname}}</td>
+          <td>
+            @foreach ($post->tags as $key => $tag)
+              {{$tag->name}}
+            @endforeach
+          </td>
         </tr>
       @endforeach
     </tbody>
