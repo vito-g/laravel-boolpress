@@ -28,8 +28,18 @@
     </div>
     <div class="form-group">
       <label for="body">Body-Post</label>
-      <textarea class="form-control" id="body" name="body" rows="24"></textarea>
+      <textarea class="form-control" id="body" name="body" rows="16"></textarea>
     </div>
+
+    <div class="form-group">
+     <label for="tags[]">Tags</label>
+     <select multiple class="form-control" id="tags" name="tags[]">
+       @foreach ($tags as $key => $tag)
+         <option value="{{$tag->id}}">{{$tag->name}}</option>
+       @endforeach
+     </select>
+    </div>
+
     <input type="submit" value="Save Post">
   </form>
 
