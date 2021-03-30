@@ -23,3 +23,5 @@ class TagSeeder extends Seeder
         }
     }
 }
+
+//Lancio poi la db:seed
