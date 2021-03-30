@@ -29,7 +29,8 @@ class PostController extends Controller
     {
 
       $authors = Author::all();
-      return view('post.create', compact('authors'));
+      $tags = Tag::all();
+      return view('post.create', compact('authors', 'tags'));
     }
 
     /**
@@ -50,10 +51,21 @@ class PostController extends Controller
         // Istanzio, dunque, un nuovo oggetto di classe Post (quella del mio Model Post):
         $post = new Post();
         //che a mezzo fill() riceve per parametro i dati della request:
+
         $post->fill($data);//fa un'assegnazione di massa per tutti gli attributi dell'oggetto del mio Database.
 
         //Vado a salvarli:
         $post->save();
+
+        //Per salvare all’interno della tabella
+        // ponte, creando quindi una relazione
+        // tra due record, possiamo utilizzare
+        // il metodo attach:
+        $post->tags()->attach($data['tags']);
+        // Per eliminare questa relazione
+        // usiamo detach().
+        // sync() per aggiornare le relazioni
+        // tra due record.
 
         return redirect()->route('post.index');
 
