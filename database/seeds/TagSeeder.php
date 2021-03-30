@@ -16,10 +16,10 @@ class TagSeeder extends Seeder
         //Tags è un array di valori perchè i tag possono esser differenti.
 
         //Dunque, nel momento in cui vado ad istanziare un nuovo oggetto di Classe Tag, devo sapere che il nome del tag può variare. Per farlo variare ciclerò la var tags con un foreach:
-        foreach ($tags as key => $tag) {
+        foreach ($tags as $key => $tag) {
           $tagDB = new Tag();
           $tagDB->name = $tag;
-          $tag->save();
+          $tagDB->save();
         }
     }
 }
