@@ -1,1 +1,9 @@
-Questa è la create!
+@extends('post.base')
+
+@section ('title', 'create')
+
+@section('content')
+
+
+
+@endsection
