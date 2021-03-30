@@ -16,7 +16,7 @@ class Post extends Model
     return $this->belongsto('App\Author');
   }
   //In altri termini, ogni qualvolta dovremo mappare una relazione tra due o più tabelle dovremo creare una MAPPING tra la tabella primaria (qui chiamata, 'author_details') e la secondaria (qui, 'authors'). Procederemo all'inverso nell'altro Model.
-}
+
 
 //COME POSSO LEGGERLA: Un post può avere un solo autore.
 
