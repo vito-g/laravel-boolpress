@@ -19,3 +19,12 @@ class Post extends Model
 }
 
 //COME POSSO LEGGERLA: Un post può avere un solo autore.
+
+  // Qui vado ad inserire il TIPO di relazione (Many to Many) esistente tra la tab 'posts', relativa a questo Model, e la tab 'tags'. Partendo dal presente Model 'Post' dobbiamo arrivare al Model 'Tag'. Definisco, dunque, una FX con un nome che identifichi la tab ('tags') relativa all'altro Model (il Tag).
+  public function tags() {
+    return $this->belongsToMany('App\Tag');
+  }
+  //procederò in modo analogo all'interno del Model Tag.
+
+  //COME POSSO LEGGERLA: Un post può avere tanti tag.
+}
