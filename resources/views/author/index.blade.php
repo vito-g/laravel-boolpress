@@ -24,6 +24,7 @@
           <td>{{$author->name}}</td>
           <td>{{$author->lastname}}</td>
           <td>{{$author->email}}</td>
+          {{-- Per Salire nella Tab Principale: --}}
           <td>{{$author->detail->biography}}</td>
           <td>{{$author->detail->website}}</td>
           <td><img src="{{$author->detail->picture}}" width= "250"></td>
