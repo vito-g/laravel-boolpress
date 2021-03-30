@@ -4,7 +4,16 @@
 
 @section('content')
 
-  <form>
+
+
+  <form action="{{route('post.store')}}" method="post">
+  @csrf
+  
+  {{-- scriviamo a mano l'input di tipo **hidden**--}}
+  {{-- <input name="_method" type="hidden" value="POST"> --}}
+
+  {{-- oppure usiamo blade --}}
+  {{-- @method('POST') --}}
     <div class="form-group">
       <label for="title">Title-Post</label>
       <input type="text" class="form-control" id="title" name="title" placeholder="title">
@@ -19,6 +28,7 @@
         <option>1</option>
       </select>
     </div> --}}
+    <input type="submit" value="Save Post">
   </form>
 
 @endsection
