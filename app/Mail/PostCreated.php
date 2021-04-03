@@ -20,7 +20,8 @@ class PostCreated extends Mailable
      */
     public function __construct(Post $post)
     {
-        //Se ci serve una classe dovremmo istanziarla qui dentro per poi utilizzarla all'interno della build con il $this.
+        //Se ci serve una classe dovremmo istanziarla qui dentro per poi utilizzarla all'interno della build con il $this. Fare cioè una iniezione di dipendenza scrivendo:
+        $this->post = $post;
     }
 
     /**
