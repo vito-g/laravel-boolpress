@@ -11,7 +11,7 @@ class TagsUsed extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $tags = [];
+    // protected $tags = [];
 
     /**
      * Create a new message instance.
@@ -30,7 +30,7 @@ class TagsUsed extends Mailable
      */
     public function build()
     {
-        $tags = $this->tags;
-        return $this->markdown('mail.tags-used', compact('tags'));
+        // $tags = $this->tags;
+        // return $this->markdown('mail.tags-used', compact('tags'));
     }
 }

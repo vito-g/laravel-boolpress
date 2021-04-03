@@ -9,6 +9,10 @@ use App\Mail\PostCreated;
 use Illuminate\Support\Facades\Mail;
 // End - Per l'utilizzo del mail sender.
 
+// Per l'utilizzo della nuova mail.
+// use App\Mail\TagsUsed;
+// End - Per l'utilizzo della nuova mail .
+
 use App\Author;//Inserito per consentire al presente Controller di comunicare col Database a mezzo Model 'Author'.
 use App\Post;
 use App\Tag;
@@ -71,10 +75,16 @@ class PostController extends Controller
         // Per eliminare questa relazione usiamo detach().
         // sync() per aggiornare le relazioni tra due record.
 
+        // ---------------questa parte non funziona ---------------------
+
+
+        // $storedPost = Post::orderBy('id', 'desc')->first();//sto prendendo l'ultimo post che ha salvato
+        //
+        // Mail::to('mail@example.com')->send(new TagsUsed($storedPost->tags));
+        // -------------------------------------------
+
         Mail::to('mail@example.com')->send(new PostCreated($post));
-        //E' proprio il Mail::to che chiama internamente al send( ) il build( ) di PostCreated. Visto che non possiamo accedere al metodo build( ), ma lo fa Laravel al posto nostro, dobbiamo per forza inviare, al PostCreated, $post come dipendenza esterna.
-
-
+        //E' proprio il Mail::to che chiama internamente al send( ) il build( ) di PostCreated. Visto che non possiamo accedere al metodo build( ), ma lo fa Laravel al posto nostro, dobbiamo per forza inviare, al PostCreated, $post come dipendenza esterna. N.B.: Anche qui avrei potuto passargli il $storedPost.
 
         return redirect()->route('post.index');
 

@@ -1,7 +1,10 @@
 @component('mail::message')
-# Introduction
+# Nuovi tag usati
 
-The body of your message.
+Eccoli:
+@foreach($tags as tag) {
+  - {{$tags->name}}
+}
 
 @component('mail::button', ['url' => ''])
 Button Text
