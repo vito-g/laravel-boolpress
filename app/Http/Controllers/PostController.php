@@ -72,6 +72,7 @@ class PostController extends Controller
         // sync() per aggiornare le relazioni tra due record.
 
         Mail::to('mail@example.com')->send(new PostCreated($post));
+        //sto inviando $post come dipendenza esterna.
 
 
 
