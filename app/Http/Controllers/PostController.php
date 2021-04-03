@@ -72,7 +72,7 @@ class PostController extends Controller
         // sync() per aggiornare le relazioni tra due record.
 
         Mail::to('mail@example.com')->send(new PostCreated($post));
-        //sto inviando $post come dipendenza esterna.
+        //E' proprio il Mail::to che chiama internamente al send( ) il build( ) di PostCreated. Visto che non possiamo accedere al metodo build( ), ma lo fa Laravel al posto nostro, dobbiamo per forza inviare, al PostCreated, $post come dipendenza esterna.
 
 
 

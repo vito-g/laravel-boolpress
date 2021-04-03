@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-use App\Post;//Per poter passare come argomento nel costruttore il $post
+use App\Post;//Per poter passare come argomento nel costruttore il $post di tipo Post
 
 class PostCreated extends Mailable
 {
