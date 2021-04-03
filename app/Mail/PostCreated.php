@@ -13,6 +13,7 @@ class PostCreated extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $post = null;
     /**
      * Create a new message instance.
      *
