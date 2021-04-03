@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\PostCreated;
+use Illuminate\Support\Facades\Mail;
 use App\Author;//Inserito per consentire al presente Controller di comunicare col Database a mezzo Model 'Author'.
 use App\Post;
 use App\Tag;
@@ -62,10 +64,12 @@ class PostController extends Controller
         // tra due record, possiamo utilizzare
         // il metodo attach:
         $post->tags()->attach($data['tags']);
-        // Per eliminare questa relazione
-        // usiamo detach().
-        // sync() per aggiornare le relazioni
-        // tra due record.
+        // Per eliminare questa relazione usiamo detach().
+        // sync() per aggiornare le relazioni tra due record.
+
+        Mail::to('mail@example.com')->send(new PostCreated($post));
+
+
 
         return redirect()->route('post.index');
 
