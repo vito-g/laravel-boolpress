@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+// Per l'utilizzo del mail sender.
 use App\Mail\PostCreated;
 use Illuminate\Support\Facades\Mail;
+// End - Per l'utilizzo del mail sender.
+
 use App\Author;//Inserito per consentire al presente Controller di comunicare col Database a mezzo Model 'Author'.
 use App\Post;
 use App\Tag;
