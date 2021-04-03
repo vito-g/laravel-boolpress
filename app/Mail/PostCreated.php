@@ -18,7 +18,7 @@ class PostCreated extends Mailable
      */
     public function __construct()
     {
-        //
+        //Se ci serve una classe dovremmo istanziarla qui dentro per poi utilizzarla all'interno della build con il $this.
     }
 
     /**
