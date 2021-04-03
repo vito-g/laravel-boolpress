@@ -30,6 +30,12 @@
       <label for="body">Body-Post</label>
       <textarea class="form-control" id="body" name="body" rows="16"></textarea>
     </div>
+    {{-- Upload dell'immagine --}}
+    <div class="form-group">
+      <label for="picture">Immagine</label>
+      <input type="file" class="form-control" id="" name="picture" >
+    </div>
+    {{-- End - Upload dell'immagine --}}
 
     <div class="form-group">
      <label for="tags[]">Tags</label>
