@@ -6,7 +6,7 @@
 
 
   {{-- {{dd($authors)}} --}}
-  <form action="{{route('post.store')}}" method="post">
+  <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
   @csrf
 
   {{-- scriviamo a mano l'input di tipo **hidden**--}}
@@ -33,7 +33,7 @@
     {{-- Upload dell'immagine --}}
     <div class="form-group">
       <label for="picture">Immagine</label>
-      <input type="file" class="form-control" id="" name="picture" >
+      <input type="file" class="form-control" id="picture" name="picture">
     </div>
     {{-- End - Upload dell'immagine --}}
 
