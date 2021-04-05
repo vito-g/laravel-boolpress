@@ -3,7 +3,6 @@
 @section ('title', 'index')
 
 @section('content')
-  <img src="{{ asset($post->img) }}" alt="">
 
   <table class="table">
     <thead class="thead-dark">
@@ -13,6 +12,7 @@
         <th scope="col">Body</th>
         <th scope="col">Author</th>
         <th scope="col">Tags</th>
+        <th scope="col">Images</th>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +27,9 @@
             @foreach ($post->tags as $key => $tag)
               {{$tag->name}}
             @endforeach
+          </td>
+          <td>
+            <img src="{{ asset($post->img) }}" width="100" alt="">
           </td>
         </tr>
       @endforeach
