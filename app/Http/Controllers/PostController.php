@@ -61,7 +61,7 @@ class PostController extends Controller
         $path = $request->file('picture')->store('public');//Per il salvataggio del file immagine. Anche meglio mettere images in luogo di public.
         // dd($path);//vai a (+)
 
-        // ed eseguire nuovamente un dump & die su questa var:
+        // ed eseguire nuovamente un dump&die su questa var:
         // dd($data);
         // Istanzio, dunque, un nuovo oggetto di classe Post (quella del mio Model Post):
         $post = new Post();
