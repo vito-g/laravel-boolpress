@@ -52,11 +52,15 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        dd($request);//lo store( ) riceve, come si vede, da sintassi, una variabile di tipo Request che possiamo analizzare con un dump & die. Si rileva, così, trattasi di un oggetto che descrive la chiamata HTTP.
+        // dd($request);//lo store( ) riceve, come si vede, da sintassi, una variabile di tipo Request che possiamo analizzare con un dump & die. Si rileva, così, trattasi di un oggetto che descrive la chiamata HTTP.
 
         //I dati inviati col form del create.blade saranno visibili sotto *request* alla voce parameters e diventeranno, poi, i valori del nuovo post del mio Database.
         // Pertanto, Per esplorare unicamente i parameters mi basterà, dapprima, preparare una variabile dove vado a mettere, sfruttando il metodo all( ) su $request,  tutte le coppie chiave-valore, appunto, dei campi del form:
         $data = $request->all();
+
+        $path = $request->file('picture')->store('pictures');//Per il salvataggio del file immagine.
+        dd($path);
+        
         // ed eseguire nuovamente un dump & die su questa var:
         // dd($data);
         // Istanzio, dunque, un nuovo oggetto di classe Post (quella del mio Model Post):
