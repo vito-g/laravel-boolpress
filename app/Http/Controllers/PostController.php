@@ -58,7 +58,7 @@ class PostController extends Controller
         // Pertanto, Per esplorare unicamente i parameters mi basterà, dapprima, preparare una variabile dove vado a mettere, sfruttando il metodo all( ) su $request,  tutte le coppie chiave-valore, appunto, dei campi del form:
         $data = $request->all();
 
-        $path = $request->file('picture')->store('public');//Per il salvataggio del file immagine. meglio mettere images
+        $path = $request->file('picture')->store('public');//Per il salvataggio del file immagine. Anche meglio mettere images in luogo di public.
         dd($path);
 
         // ed eseguire nuovamente un dump & die su questa var:
