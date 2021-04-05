@@ -59,7 +59,7 @@ class PostController extends Controller
         $data = $request->all();
 
         $path = $request->file('picture')->store('public');//Per il salvataggio del file immagine. Anche meglio mettere images in luogo di public.
-        dd($path);
+        // dd($path);
 
         // ed eseguire nuovamente un dump & die su questa var:
         // dd($data);
