@@ -3,6 +3,7 @@
 @section ('title', 'index')
 
 @section('content')
+  <img src="{{ asset($post->img) }}" alt="">
 
   <table class="table">
     <thead class="thead-dark">
